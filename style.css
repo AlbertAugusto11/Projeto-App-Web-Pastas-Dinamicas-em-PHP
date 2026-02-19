@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fffaf5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-box {
+    background: white;
+    border: 2px solid #ff6600;
+    border-radius: 8px;
+    padding: 20px;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #ff6600;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ff6600;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color: #ff6600;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e65c00;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.user-table button {
+    margin: 2px;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-table button:hover {
+    background-color: #e65c00;
+}
+
+.user-table th,
+.user-table td {
+    border: 1px solid #ff6600;
+    padding: 8px;
+    text-align: center;
+}
+
+.user-table th {
+    background-color: #ff6600;
+    color: white;
+}
+
+.user-table tr:nth-child(even) {
+    background-color: #fffaf5;
+}
+
+.user-table input[type="text"] {
+    width: 90%;
+    padding: 5px;
+}
+
+.user-table button {
+    margin: 2px;
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+h2 {
+    text-align: center;
+    color: #ff6600;
+    margin-top: 20px;
+}

@@ -1,0 +1,72 @@
+Fluxo do Sistema
+
+1. Primeira Página: Login (login.php)
+Usuário informa matrícula e senha.
+
+Sistema verifica credenciais:
+
+Se válidas → verifica se senha é temporária.
+
+Se temporária → redireciona para Nova Senha (nova_senha.php).
+
+Se não temporária → redireciona para App (app.php).
+
+Se inválidas → mostra mensagem de erro.
+
+2. Cadastro (cadastro.php)
+Usuário informa matrícula, nome, senha.
+
+Sistema verifica:
+
+Se não existe nenhum usuário → primeiro usuário criado como admin.
+
+Se já existe → cadastra como usuário comum.
+
+Após cadastro → link para login.
+
+3. Nova Senha (nova_senha.php)
+Usuário define nova senha definitiva.
+
+Se senha válida → atualiza no banco e redireciona para App (app.php).
+
+Se inválida → mostra erro e pede nova tentativa.
+
+4. App Web Pastas Dinâmicas (app.php)
+Usuário logado acessa o sistema principal.
+
+Se usuário é admin:
+
+Link para Administração (admin.php).
+
+Se usuário é comum:
+
+Acesso apenas ao App Pastas Dinâmicas.
+
+5. Administração (admin.php)
+Apenas acessível para usuários com is_admin = TRUE.
+
+Funcionalidades:
+
+Listar usuários.
+
+Atualizar dados (nome, perfil admin).
+
+Resetar senha (define senha temporária).
+
+Excluir usuário.
+
+Após reset de senha → usuário deve passar pelo fluxo de Nova Senha no próximo login.
+
+🔑 Resumo Visual (em texto)
+Código
+[Login] ---> [Credenciais válidas?] ---não---> [Erro]
+   |
+   sim
+   v
+[Senha temporária?] ---sim---> [Nova Senha] ---> [App]
+   | não
+   v
+[App] ---> [Admin?] ---sim---> [Administração]
+                     | não
+                     v
+                  [App Pastas Dinâmicas]

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - App Web Pastas Dinâmicas</title>
+    <link rel="stylesheet" href="styleSobre.css">
+</head>
+
+<body>
+    <header>
+        <h1>Sobre o App Web Pastas Dinâmicas</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Objetivo</h2>
+            <p>
+                O App Web Pastas Dinâmicas foi criado para acelerar e otimizar o ciclo de geração de pastas para o
+                Central,
+                substituindo processos manuais e ultrapassados.
+            </p>
+        </section>
+
+        <section>
+            <h2>Problema Atual</h2>
+            <ol>
+                <li>O CPD precisa imprimir todas as pastas.</li>
+                <li>Aguardar a confecção das pastas.</li>
+                <li>Receber e digitar todas as pastas.</li>
+                <li>Imprimir novamente.</li>
+                <li>Corrigir erros.</li>
+                <li>Revisar no RETA Pedidos.</li>
+                <li>Enviar as pastas.</li>
+            </ol>
+            <p>
+                Esse processo é demorado e sujeito a falhas, sendo o principal ponto que o app busca solucionar.
+            </p>
+        </section>
+
+        <section>
+            <h2>Como Funciona</h2>
+            <p>
+                O aplicativo recebe um arquivo CSV com dados estruturados, incluindo:
+            </p>
+            <ul>
+                <li>Código do produto</li>
+                <li>Descrição</li>
+                <li>Quantidade por caixa</li>
+                <li>Venda total dos últimos 3 dias</li>
+            </ul>
+            <p>
+                Com base em estatísticas de projeção de vendas, o sistema calcula e sugere pedidos em três níveis:
+            </p>
+            <ul>
+                <li><strong>Pedido Alto:</strong> média da venda + 40%</li>
+                <li><strong>Pedido Normal:</strong> média da venda</li>
+                <li><strong>Pedido Baixo:</strong> 50% da média</li>
+            </ul>
+            <p>
+                O resultado é exportado em CSV, podendo ser convertido em DBF e integrado ao RETA para manipulação
+                tradicional.
+            </p>
+        </section>
+
+        <section>
+            <h2>Benefícios</h2>
+            <p>
+                Com essa automação, todo o processo é acelerado significativamente, reduzindo erros e aumentando a
+                eficiência.
+            </p>
+        </section>
+
+        <section>
+            <h2>Projeto Completo</h2>
+            <p>
+                Você pode acessar o código-fonte e mais detalhes do projeto diretamente no GitHub:
+            </p>
+            <p>
+                <a href="https://github.com/seu-usuario/seu-repositorio" target="_blank" class="github-link">
+                    <span class="github-icon">🐙</span> Ver Projeto no GitHub
+                </a>
+            </p>
+        </section>
+
+        <nav>
+            <button onclick="window.history.back()">Voltar</button>
+        </nav>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - App Web Pastas Dinâmicas</p>
+    </footer>
+</body>
+
+</html>

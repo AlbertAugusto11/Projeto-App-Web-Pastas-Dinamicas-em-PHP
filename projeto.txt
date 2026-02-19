@@ -1,0 +1,11 @@
+/app
+  ├── config.php        # Conexão PDO
+  ├── user.php          # Classe User (CRUD + login)
+  ├── login.php         # Página de login
+  ├── cadastro.php      # Página de cadastro
+  ├── nova_senha.php    # Página de troca de senha temporária
+  ├── app.php           # App Web Pastas Dinâmicas
+  ├── admin.php         # Área do administrador
+  └── style.css         # CSS externo
+
+  

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>App Web Pastas Dinâmicas</title>
+    <link rel="stylesheet" href="styleAppWeb.css" defer>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>App Web Pastas Dinâmicas</h1>
+        <a href="./logout.php"><img src="./logoutIMG.svg" alt="SAIR"></a>
+        <a href="./sobreApp.html">SOBRE</a>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <label for="fileInput">Selecione o arquivo CSV:</label>
+            <input type="file" id="fileInput" accept=".csv">
+
+            <label for="pedidoTipo">Tipo de Pedido:</label>
+            <select id="pedidoTipo">
+                <option value="pedidoBaixo">Pedido Baixo</option>
+                <option value="pedidoNormal">Pedido Normal</option>
+                <option value="pedidoAlto">Pedido Alto</option>
+            </select>
+
+            <button id="processBtn">Processar Arquivo</button>
+
+        </section>
+    </main>
+</body>
+
+</html>

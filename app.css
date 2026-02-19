@@ -1,0 +1,54 @@
+:root {
+  --primary-color: #ff6600;   /* laranja vibrante */
+  --secondary-color: #ffa64d; /* laranja suave */
+  --background-color: #ffffff; /* branco */
+  --text-color: #333333;      /* cinza escuro */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Caixa de login/bem-vindo */
+.login-box {
+  background-color: var(--background-color);
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.login-box h1 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.login-box p {
+  margin: 0.5rem 0;
+}
+
+/* Links */
+.login-box a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-box a:hover {
+  color: var(--secondary-color);
+}
+
+/* Link "Sair" separado */
+.login-box .link {
+  margin-top: 1.5rem;
+}

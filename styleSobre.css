@@ -1,0 +1,106 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(to bottom, #fff, #fff5eb);
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(90deg, #ff6600, #ffa64d);
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.2rem;
+}
+
+/* Seções principais */
+main section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-left: 6px solid #ff6600;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+main h2 {
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+/* Listas */
+ol,
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Botão Voltar */
+nav button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+nav button:hover {
+    background-color: #e65c00;
+    transform: scale(1.05);
+}
+
+/* Link do GitHub */
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ff6600;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.github-link:hover {
+    background-color: #e65c00;
+    transform: scale(1.05);
+}
+
+.github-icon {
+    font-size: 1.2rem;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 15px;
+    background-color: #ff6600;
+    color: #fff;
+    border-radius: 8px;
+}
