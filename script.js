@@ -1,9 +1,31 @@
+let listaP = [];
+
+function getSelectedFolders() {
+    const allSelected = document.getElementById("allFolders").checked;
+    if (allSelected) {
+        return [1, 2, 3, 4]; // todas as pastas
+    }
+    const checkboxes = document.querySelectorAll('.folder-check:checked');
+    return Array.from(checkboxes).map(cb => parseInt(cb.value));
+}
+
+function toggleCheckboxes() {
+    const allSelected = document.getElementById("allFolders").checked;
+    const checkboxes = document.querySelectorAll('.folder-check');
+
+    checkboxes.forEach(cb => {
+        cb.disabled = allSelected;
+        if (allSelected) cb.checked = false;
+    });
+}
+
 function appPastasDinamicas() {
+    document.getElementById("allFolders").addEventListener("change", toggleCheckboxes);
+
     document.getElementById("processBtn").addEventListener("click", () => {
         const fileInput = document.getElementById("fileInput").files[0];
         const pedidoTipo = document.getElementById("pedidoTipo").value;
 
-        // ✅ Verificação da extensão
         if (!fileInput) {
             alert("Por favor, selecione um arquivo CSV.");
             return;
@@ -19,7 +41,6 @@ function appPastasDinamicas() {
             const cabecalho = linhas[0].split(",").map(c => c.trim());
             const dados = linhas.slice(1);
 
-            // ✅ Verificação das colunas esperadas
             const colunasEsperadas = ["pasta", "cod", "descr", "qtdCx", "venda"];
             const faltando = colunasEsperadas.filter(c => !cabecalho.includes(c));
 
@@ -28,24 +49,51 @@ function appPastasDinamicas() {
                 return;
             }
 
-            let resultado = [cabecalho.join(",") + ",segPedido"];
+            listaP = []; // limpa antes de processar
+            const pastasSelecionadas = getSelectedFolders();
 
             dados.forEach(linha => {
                 const [pasta, cod, descr, qtdCx, venda] = linha.split(",");
+                const pastaNum = parseInt(pasta);
+
+                if (!pastasSelecionadas.includes(pastaNum)) return;
+
                 const v1 = parseFloat(venda);
                 const qtd = parseFloat(qtdCx);
                 const media = v1 / 3;
 
-                const pedidoBaixo = Math.ceil((media * 0.5) / qtd);
-                const pedidoNormal = Math.ceil(media / qtd);
-                const pedidoAlto = Math.ceil((media * 1.4) / qtd);
+                let obj = { 
+                    pasta: pastaNum, 
+                    cod: parseInt(cod), 
+                    descr: descr, 
+                    qtdCx: qtd, 
+                    venda: v1, 
+                    pedidoBaixo: Math.ceil((media * 0.4) / qtd), 
+                    pedidoNormal: Math.ceil(media / qtd), 
+                    pedidoAlto: Math.ceil((media * 1.5) / qtd)
+                };
+                listaP.push(obj);
+            });
 
+            // ✅ Ordena os objetos pela pasta
+            listaP.sort((a, b) => a.pasta - b.pasta);
+
+            // ✅ Monta o CSV já ordenado
+            let resultado = [cabecalho.join(",") + ",segPedido"];
+            listaP.forEach(obj => {
                 let segPedido;
-                if (pedidoTipo === "pedidoBaixo") segPedido = pedidoBaixo;
-                else if (pedidoTipo === "pedidoNormal") segPedido = pedidoNormal;
-                else segPedido = pedidoAlto;
+                if (pedidoTipo === "pedidoBaixo") segPedido = obj.pedidoBaixo;
+                else if (pedidoTipo === "pedidoNormal") segPedido = obj.pedidoNormal;
+                else segPedido = obj.pedidoAlto;
 
-                resultado.push([pasta, cod, descr, qtdCx, v1, segPedido.toFixed(2)].join(","));
+                resultado.push([
+                    obj.pasta, 
+                    obj.cod, 
+                    obj.descr, 
+                    obj.qtdCx, 
+                    obj.venda, 
+                    segPedido.toFixed(2)
+                ].join(","));
             });
 
             const blob = new Blob([resultado.join("\n")], { type: "text/csv" });
@@ -60,5 +108,4 @@ function appPastasDinamicas() {
     });
 }
 
-// ✅ Como você usa defer, basta chamar direto:
 appPastasDinamicas();

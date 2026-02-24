@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>App Web Pastas Dinâmicas</title>
-    <link rel="stylesheet" href="styleAppWeb.css" defer>
+    <link rel="stylesheet" href="styleAppWeb.css">
     <script src="script.js" defer></script>
 </head>
 
@@ -12,7 +12,7 @@
     <header>
         <h1>App Web Pastas Dinâmicas</h1>
         <a href="./logout.php"><img src="./logoutIMG.svg" alt="SAIR"></a>
-        <a href="./sobreApp.html">SOBRE</a>
+        <a id="infoBtn" href="./sobreApp.html"> --- Sobre o App --- </a>
     </header>
 
     <main>
@@ -27,10 +27,29 @@
                 <option value="pedidoAlto">Pedido Alto</option>
             </select>
 
-            <button id="processBtn">Processar Arquivo</button>
+            <!-- Checkboxes das pastas -->
+            <div id="pastas">
+                <p>Selecione as pastas:</p>
+                <label><input type="checkbox" value="1" class="folder-check"> Pasta 1</label>
+                <label><input type="checkbox" value="2" class="folder-check"> Pasta 2</label>
+                <label><input type="checkbox" value="3" class="folder-check"> Pasta 3</label>
+                <label><input type="checkbox" value="4" class="folder-check"> Pasta 4</label>
+            </div>
 
+            <!-- Selecionar todas -->
+            <div>
+                <label><input type="checkbox" id="allFolders"> Selecionar todas as pastas</label>
+            </div>
+
+            <button id="processBtn">Processar Arquivo</button>
         </section>
     </main>
+
+    <footer>
+        <h3>Idealizado e Codificado por Albert A.</h3>
+        <h4>Insigths dados pela tropa da F-15 SANTO AFONSO</h4>
+    </footer>
+
 </body>
 
 </html>
